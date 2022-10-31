@@ -1,37 +1,30 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import {
-  BrowserRouter as Router, Routes,
-  Switch,
+  BrowserRouter as Router,
+  Routes,
   Route
 } from "react-router-dom";
 import routes from './routes';
+import EmployeeContainer from './containers/Employee';
+import RegisterContainer from './containers/Register';
+import LoginContainer from './containers/Login';
+import CreateEmployeeContainer from './containers/CreateEmployee';
+
+
+
 
 
 function App() {
-  return(
-    
-      
-      <Router>
-        <Switch>
 
-          {routes.map((route, index)=> (
-            <Route 
-            key={index}
-            path={route.path} 
-            exact 
-            render={(props) => <route.component {...props} />}>
-            </Route>
-          ))}
-
-
-        </Switch>
-      </Router>
-      
-    
-
-  )
-
+    return (
+      <Routes>
+        <Route path="/" element={<EmployeeContainer />} />
+        <Route path="/auth/register" element={<RegisterContainer />} />
+        <Route path="/auth/login" element={<LoginContainer />} />
+        <Route path="/employee/create" element={<CreateEmployeeContainer />} />
+      </Routes>
+    )
 
 }
 

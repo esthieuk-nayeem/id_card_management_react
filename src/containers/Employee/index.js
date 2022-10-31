@@ -1,8 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import Header from '../../components/Headers'
 
 const EmployeeContainer = () => {
+
   return (
-    <div>EmployeeContainer</div>
+    <div>
+    <Header/>
+    <h1>Employee</h1>
+    </div>
   )
 }
 
