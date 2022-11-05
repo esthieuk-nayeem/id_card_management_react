@@ -10,6 +10,7 @@ import EmployeeContainer from './containers/Employee';
 import RegisterContainer from './containers/Register';
 import LoginContainer from './containers/Login';
 import CreateEmployeeContainer from './containers/CreateEmployee';
+import { GlobalProvider } from './context/Provider';
 
 
 
@@ -18,12 +19,14 @@ import CreateEmployeeContainer from './containers/CreateEmployee';
 function App() {
 
     return (
+      <GlobalProvider>
       <Routes>
         <Route path="/" element={<EmployeeContainer />} />
         <Route path="/auth/register" element={<RegisterContainer />} />
         <Route path="/auth/login" element={<LoginContainer />} />
         <Route path="/employee/create" element={<CreateEmployeeContainer />} />
       </Routes>
+      </GlobalProvider>
     )
 
 }
